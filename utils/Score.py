@@ -1,7 +1,7 @@
 import numpy as np
 
 class Score:
-    
+
     # utility method to calculate the r_squared score
     # here is a good article about the implementation: 
     # https://www.askpython.com/python/coefficient-of-determination
@@ -18,8 +18,8 @@ class Score:
         #       correlation between y_true and y_hat
         #   ],
         #   [
-        #       correlation between y_true and y_true, 
-        #       correlation between y_hat and y_true
+        #       correlation between y_hat and y_true,
+        #       correlation between y_true and y_true 
         #   ]
         # ]
 
