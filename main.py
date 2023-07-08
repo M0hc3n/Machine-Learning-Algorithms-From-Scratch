@@ -1,25 +1,21 @@
 from sklearn.model_selection import train_test_split
 from sklearn import datasets
 
-import numpy as np
+# importing our model
+from naive_bayes.naive_bayes import NaiveBayes 
 
+# importing the Metric class
 from utils.Metric import Metric
 
-from logistic_regression.logistic_regression import LogisticRegression
-
-# we will be testing our model on the well known breast cancer dataset
-bc = datasets.load_breast_cancer()
-X, y = bc.data, bc.target
-
+X, y = datasets.make_classification(
+    n_samples=10000, n_features=10, n_classes=2, random_state=123
+)
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=1234
+    X, y, test_size=0.2, random_state=123
 )
 
-# initialize the model with the given parameters
-model = LogisticRegression(learning_rate=0.0001, n_iterations=1000)
+model = NaiveBayes()
 model.fit(X_train, y_train)
+y_hat = model.predict(X_test)
 
-# test out the model
-predictions = model.predict(X_test)
-
-print("LR classification accuracy:", Metric().basic_accuracy_score(y_test, predictions))
+print("Naive Bayes classification accuracy", Metric().basic_accuracy_score(y_test, y_hat))
