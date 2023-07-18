@@ -5,6 +5,12 @@ from utils.Metric import Metric
 
 from collections import Counter
 
+def most_common_class(y):
+    if(len(y) == 0): return 0 
+    counter = Counter(y)
+    most_common = counter.most_common(1)[0][0]
+    return most_common
+
 # this class is an implementation of the Decision Tree ML Algorithm
 # the following article explains a key part of it: Entropy
 # https://towardsdatascience.com/entropy-how-decision-trees-make-decisions-2946b9c18c8
@@ -50,7 +56,7 @@ class DecisionTree():
             n_samples < self.min_num_of_samples 
             or n_classes == 1 or depth >= self.max_depth
         ):
-            leaf_value = self._most_common_class(y)
+            leaf_value = most_common_class(y)
             return Node(value=leaf_value)
 
         # step 1 bis: find the best criteria to split the data
@@ -145,8 +151,4 @@ class DecisionTree():
 
         return self._traverse_tree(X, node.right)
     
-    def _most_common_class(self, y):
-        if(len(y) == 0): return 0 
-        counter = Counter(y)
-        most_common = counter.most_common(1)[0][0]
-        return most_common
+    
