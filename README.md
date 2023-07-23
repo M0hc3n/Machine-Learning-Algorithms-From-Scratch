@@ -22,7 +22,7 @@ This repository gathers the essential Machine Learning algorithms coded from scr
       - **main.py**: contains the testing script, it usually has an accuracy check or a plotting of the result.
     To test the implementation, you can drag and drop the main file to the main directory \
     <br />
-![ezgif com-video-to-gif](https://github.com/Mohcen2311/ML-Algorithms-From-Scratch/assets/101293365/02626bac-a164-4fc5-9aaa-9a091f001950)
+![Recording_2023-07-23_154017_AdobeExpress](https://github.com/Mohcen2311/Machine-Learning-Algorithms-From-Scratch/assets/101293365/c67261cd-eec6-46e6-ac34-bdfe09e1d5c5)
     <br />
     then, you can run:
 ```bash
